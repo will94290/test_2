@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  post 'users' => 'users#index'
+  post '/users' => 'users#index'
   root 'pages#home'
   resources :users do
     resource :profile

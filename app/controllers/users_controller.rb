@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   
   def index
     if params[:name] != nil && params[:name].length > 1
-      @users = User.includes(:profile).select { |user| user.profile != nil && user.profile.first_name == params[:name]}
+      @users = User.includes(:profile).select { |user| user.profile != nil && user.profile.first_name.upcase == params[:name].upcase}
       #redirect_to "/users"
     else
       @users = User.includes(:profile)

@@ -3,9 +3,9 @@
     <div class="col-md-8 col-md-offset-2">
       <h1 class="text-center">Logo Community</h1>
       <p class="text-center">Welcome to the Logo community. Users must fill out a profile in order to be visible in the community.</p>
-      <%= form_tag "/users", method: "post" do %>
+      <%= form_tag "/users", method: "get" do %>
       <form class="form-inline">
-	<input class="form-control mr-sm-2" type="text" name="name" placeholder="Search" aria-label="Search">
+	<input class="form-control mr-sm-2" type="text" name="name" placeholder="click on < search > for see everybody !" aria-label="Search">
 	<button class="btn btn-online-success my-2 my-sm-0" type="submit">Search</button>
       </form>
       <% end %>

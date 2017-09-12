@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 text-center">
+      <% if @user.profile != nil %>
+      <%= image_tag @user.profile.avatar.url, class: "avatar-show-img"%>
+      <% end %>
+    </div>
+    <% if @user.profile != nil %>
+    <div class="col-md-6">
+      <h1> <%= @user.profile.first_name %> <%= @user.profile.last_name%></h1>
+      <h3> <span><%= job_title_icon %> </span><%= @user.profile.job_title%> <i class="fa fa-location-arrow".html_safe></i> <%= @user.profile.city %></h3>
+      <div class="well profile-block profile-contact">
+	<h4>Contact information :</h4>
+	<ul>
+	  <li><h5><%= @user.profile.phone_number %></h5></li>
+	  <li><h5><%= @user.profile.contact_email %></h5></li>
+	</ul>
+      </div>
+      <div class="well profile-block profile-description">
+	<h4>Description :</h4>
+	<h5><%= @user.profile.description %></h5>
+      </div>
+      <% if @user.profile.service_offer != nil && @user.profile.service_offer.length > 5 %>
+      <div class="well profile-block profile-contact">
+	<h4>My service offer :</h4>
+	<h5><%= @user.profile.service_offer %></h5>
+      </div>
+      <% end %>
+       <% if @user.profile.reference != nil && @user.profile.reference.length > 5 %>
+      <div class="well profile-block profile-description">
+	<h4>My reference :</h4>
+	<h5><%= @user.profile.reference %></h5>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+    <% if @user.id == current_user.id %>
+    <% if @user.profile == nil %>
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well text-center profile-btn">
+	<h2> Your profile </h2>
+	<%= link_to "Create your profile !", new_user_profile_path(user_id: current_user.id), class: 'btn btn-default btn-lg btn-block text-center' %>
+	<%= link_to "Modifiate your Account", edit_user_registration_path, class: "btn btn-default btn-lg btn-block text-center" %>
+	<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-default btn-lg btn-block text-center" %>
+      </div>
+    </div>
+    <% else %>
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well text-center profile-btn">
+	<h2> Your profile </h2>
+	<%= link_to "Edit your profile !", edit_user_profile_path(user_id: current_user.id), class: 'btn btn-default btn-lg btn-block text-center' %>
+	<%= link_to "Modifiate your Account", edit_user_registration_path, class: "btn btn-default btn-lg btn-block text-center" %>
+	<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-default btn-lg btn-block text-center" %>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>

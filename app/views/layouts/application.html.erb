@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Projet1</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    <%= csrf_meta_tags %>
+  </head>
+  
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class='container'>
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
+	    <span class="sr-only">Toggle navigation</span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+	  <a href="/" class="navbar-brand"><span class="up"><i class="fa fa-group"></i> Logo</span></a>
+	</div>
+	<div class="collapse navbar-collapse" id="main-nav-collapse">
+	  <ul class="nav navbar-nav navbar-right">
+	    <% if user_signed_in? %>
+	    <li><%= link_to "Community", users_path, class: "up" %></li>
+	    <% else %>
+	    <li><%= link_to "Community", "/users/sign_in", class: "up" %></li>
+	    <% end %>
+	    <li><%= link_to "About", "/about", class: "up"%></li>
+	    <% if user_signed_in? %>
+	    <li><%= link_to "Mon profil", "/users/#{current_user.id}", class: "up" %></li>
+	    <% else %>
+	    <li><%= link_to "Mon profil", "/users/sign_in", class: "up" %></li>
+	    <% end %>
+	  </ul>
+	</div><!-- /.navbar-collapse -->
+      </div>
+    </nav> 
+    
+      <%= yield %>
+  </body>
+</html>

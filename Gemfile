@@ -33,8 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use twiter lib
-gem 'bootstrap-sass', '3.3.7'
+# Use twiter lib '3.3.7'
+gem 'bootstrap-sass'
 
 # Use icons
 gem 'font-awesome-sass', '4.6.2'

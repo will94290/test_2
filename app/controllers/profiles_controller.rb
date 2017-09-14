@@ -15,13 +15,13 @@ class ProfilesController < ApplicationController
       flash[:success] = "Profile updated !"
       redirect_to "/users/#{params[:user_id]}"
     else
-      render action :new
+      render :new
     end
   end
   
   def edit
     @user = User.find(params[:user_id])
-    @profile = @user.profile  
+    @profile = @user.profile
   end
 
   def update
@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
       flash[:success] = "Profile updated !"
       redirect_to "/users/#{params[:user_id]}"
     else
-      render action :edit
+      render :edit
     end
   end
 

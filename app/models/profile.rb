@@ -1,10 +1,11 @@
-class Test_mail < ActiveModel::Validator
-  def validate(record)
-    if /@/.match(record.contact_email) == nil
-      record.errors[:base] << "Bad address"
+class EmailValidator < ActiveModel::EachValidator
+  def validate_each(record, attribute, value)
+    unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+      record.errors[attribute] << (options[:message] || "is not an email")
     end
   end
-end
+end 
+
 
 class Profile < ActiveRecord::Base
   belongs_to :user
@@ -17,7 +18,6 @@ class Profile < ActiveRecord::Base
   validates :job_title, presence: true
   validates :city, presence: true
   validates :description, presence: true
-  validates :contact_email, presence: true, uniqueness: true
+  validates :contact_email, presence: true, uniqueness: true, email: true
   validates :phone_number, numericality: { only_integer: true }, length: { is: 10}, uniqueness: true
-  validates_with Test_mail
 end

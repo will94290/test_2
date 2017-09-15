@@ -1,61 +1,73 @@
 <%= form_for @profile, url: user_profile_path, :html => { :multipart => true } do |f|%>
-<div class="col-md-10 col-md-offset-1">
-  <div class="well">
-    <div class="form-group">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, class: 'form-control' %>
-    </div>
-    
-    <div class="form-group">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, class: 'form-control' %>
-  </div>
-    
-    <div class="form-group">
-      <%= f.label :avatar %>
-      <%= f.file_field :avatar, class: 'form-control' %>
-  </div>
-    
-    <div class="form-group">
-      <%= f.label :job_title %>
-      <%= f.select :job_title, ['Developer', 'Entrepreneur', 'Investor'], {}, class: 'form-control' %>
-  </div>
-    
-    <div class="form-group">
-      <%= f.label :phone_number %>
-      <%= f.text_field :phone_number, class: 'form-control' %>
-    </div>
-    
-    <div class="form-group">
-      <%= f.label :City %>
-      <%= f.text_field :city, class: 'form-control' %>
-    </div>
-    
-    <div class="form-group">
-    <%= f.label :contact_email %>
-    <%= f.text_field :contact_email, class: 'form-control' %>
-    </div>
-    
-    <div class="form-group">
-      <%= f.label :description %>
-      <%= f.text_area :description, class: 'form-control' %>
-    </div>
-    
-    <p>You can add some service offer and some reference.(It is not mandatory but it's better)</p>
 
-    <div class="form-group">
-    <%= f.label :service_offer %>
-    <%= f.text_area :service_offer, class: 'form-control' %>
-    </div>
-    
-    <div class="form-group">
-      <%= f.label :reference %>
-      <%= f.text_area :reference, class: 'form-control' %>
-    </div>
-    
-    <div class="form-group">
-      <%= f.submit "Update Profile", class: 'btn btn-primary' %>
+<% if @profile.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this article from being saved:</h2>
+  <ul>
+    <% @profile.errors.full_messages.each do |msg| %>
+    <li class="field_with_errors"><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="col-md-10 col-md-offset-1">
+    <div class="well">
+      <div class="form-group">
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+	<%= f.label :last_name %>
+	<%= f.text_field :last_name, class: 'form-control' %>
+      </div>
+      
+	<div class="form-group">
+	  <%= f.label :avatar %>
+	  <%= f.file_field :avatar, class: 'form-control' %>
+	</div>
+	
+	<div class="form-group">
+	  <%= f.label :job_title %>
+	  <%= f.select :job_title, ['Developer', 'Entrepreneur', 'Investor'], {}, class: 'form-control' %>
+	</div>
+	
+	<div class="form-group">
+	  <%= f.label :phone_number %>
+	  <%= f.text_field :phone_number, class: 'form-control' %>
+	</div>
+	
+	<div class="form-group">
+	  <%= f.label :City %>
+	  <%= f.text_field :city, class: 'form-control' %>
+	</div>
+	
+	<div class="form-group">
+	  <%= f.label :contact_email %>
+	  <%= f.text_field :contact_email, class: 'form-control' %>
+	</div>
+	
+	<div class="form-group">
+	  <%= f.label :description %>
+	  <%= f.text_area :description, class: 'form-control' %>
+	</div>
+	
+      <p>You can add some service offer and some reference.(It is not mandatory but it's better)</p>
+      
+      <div class="form-group">
+	<%= f.label :service_offer %>
+	<%= f.text_area :service_offer, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+	  <%= f.label :reference %>
+	  <%= f.text_area :reference, class: 'form-control' %>
+	</div>
+      
+	<div class="form-group">
+	  <%= f.submit "Update Profile", class: 'btn btn-primary' %>
+	</div>
     </div>
   </div>
-</div>
 <% end %>

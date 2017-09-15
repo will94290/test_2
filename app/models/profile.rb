@@ -19,5 +19,5 @@ class Profile < ActiveRecord::Base
   validates :city, presence: true
   validates :description, presence: true
   validates :contact_email, presence: true, uniqueness: true, email: true
-  validates :phone_number, numericality: { only_integer: true }, length: { is: 10}, uniqueness: true
+  validates :phone_number, numericality: { only_integer: true, message: "use number only" }, length: { is: 10, message: "is too long"}, uniqueness: true
 end

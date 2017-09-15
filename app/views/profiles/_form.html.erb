@@ -2,8 +2,8 @@
 
 <% if @profile.errors.any? %>
 <div id="error_explanation">
-  <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this article from being saved:</h2>
-  <ul>
+  <h2 class="text-center"><%= pluralize(@profile.errors.count, "error") %> prohibited this article from being saved:</h2>
+  <ul class="text-center">
     <% @profile.errors.full_messages.each do |msg| %>
     <li class="field_with_errors"><%= msg %></li>
     <% end %>

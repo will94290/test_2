@@ -12,11 +12,11 @@ class UsersController < ApplicationController
     else
       @users = @users
     end
-     if params[:job] != nil && params[:job] != "Job title"
-      @users = @users.select { |user| user.profile != nil && user.profile.job_title.upcase == params[:job].upcase}
-    else
+    if params[:job] != nil && params[:job] != "Job title"
+       @users = @users.select { |user| user.profile != nil && user.profile.job_title.upcase == params[:job].upcase}
+     else
       @users = @users
-     end
+    end
   end
   
   # /users/:id

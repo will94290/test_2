@@ -1,6 +1,31 @@
-Pour m'utiliser il faut:
-- Que vous ayez déjà installé "Ruby" ainsi que son extension "Ruby On Rails".
-- Aller dans le repository que vous venez de cloner (cd "my_repo").
-- Installer les gems nécessaires (bundle install).
-- Lancer le serveur (rails s).
-- Aller sur un navigateur et taper l'adresse affichée sur le terminal.
+# jquery.cityAutocomplete
+City autocomplete dropdown
+
+## How to Use?
+
+City autocomplete depends on jquery and google maps js api:
+
+```
+<link rel="stylesheet" type="text/css" href="city-autocomplete.css"/>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?libraries=places&language=en"></script>
+<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery.city-autocomplete.js" type="text/javascript"></script>
+```
+
+Create input:
+
+```
+<input id="city" name="city" autocomplete="off">
+```
+
+then
+
+```
+$('input#city').cityAutocomplete();
+```
+
+You can set data-country attribute for input to search cities only for selected country:
+
+```
+<input id="city" name="city" autocomplete="off" data-country="ru">
+```

@@ -5,15 +5,17 @@
       <p class="text-center">Welcome to the Logo community. Users must fill out a profile in order to be visible in the community.</p>
       <%= form_tag "/users", method: "get" do %>
       <form class="form-inline my-1 my-lg-0 well">
-	<input class="form-control mr-sm-2" type="text" name="name" placeholder="First name" aria-label="Search">
-	<input class="form-control mr-sm-2" type="text" name="second" placeholder="Last name" aria-label="Search">
-	<select class="form-control" name="job">
+	<ul class="list-inline clearfix">
+	<li><input class="form-control mr-sm-2" type="text" name="name" placeholder="First name" aria-label="Search"></li>
+	<li><input class="form-control mr-sm-2" type="text" name="second" placeholder="Last name" aria-label="Search"></li>
+	<li><select class="form-control" name="job">
 	  <option>Job title</option>
 	  <option>Developer</option>
 	  <option>Entrepreneur</option>
 	  <option>Investor</option>
-	</select>
-	<button class="btn btn-online-success my-2 my-sm-0" type="submit">Search</button>
+	</select></li>
+	<li><button class="btn btn-online-success my-2 my-sm-0" type="submit">Search</button></li>
+	</ul>
       </form>
       <% end %>
       <ul class="list-unstyled">

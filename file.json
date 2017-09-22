@@ -1,0 +1,90 @@
+{
+    "fr":
+    {
+	"home":
+	{
+	    "home_1": "Bienvenue sur mon site",
+	    "home_2": "Un site d'adhésion où vous pouvez trouver des professionnels",
+	    "home_3": "La Communauté",
+	    "home_4": "Visite la communauté pour rencontrer d'autre gens",
+	    "home_5": "Visite la communauté"
+	},
+	
+	"about":
+	{
+	    "about_1": "A propos de nous",
+	    "about_2": "Notre compagnie a pour but de créer une communauté exclusive pour les développeurs, les investisseurs et les entrepreneurs pour qu'ils puissent se rencontrer"
+	},
+	
+	"profile":
+	{
+	    "profile_error": "empêche ce formulaire d'être sauvgardé",
+	    "update": "Mettre à jour",
+	    "error": "erreur(s)",
+	    "plus": "Vous pouvez ajouter les services que vous offrez ou vos références.(Ce n'est pas obligatoire, mais conseillé)."
+	},
+	
+	"job":
+	{
+	    "dev": "Developpeur",
+	    "entre": "Entrepreneur",
+	    "inv": "Investisseur"
+	},
+	
+	"user":
+	{
+	    "contact": "Contactez moi:",
+	    "offer": "Mes services proposés :",
+	    "ref": "Mes références :",
+	    "profile": "Votre profil",
+	    "create": "Créez votre profil !",
+	    "edit": "Editez votre profil",
+	    "account": "Modifiez votre compte",
+	    "out": "Se déconnecter"
+	}
+    },
+    "en":
+    {
+	"home":
+	{
+	    "home_1": "Welcome to my_app",
+	    "home_2": "A membership site where you can find people.",
+	    "home_3": "The Community",
+	    "home_4": "Visit the community to meet other people",
+	    "home_5": "Visit the community"
+	},
+	
+	"about":
+	{
+	    "about_1": "About us",
+	    "about_2": "Our compagny focuses on creating an exclusive community for developers, investors and entrepreneurs to meet."
+	},
+
+	"profile":
+	{
+	    "profile_error": "prohibited this article from being saved:",
+	    "update": "Update Profile",
+	    "error": "error(s)",
+	    "plus": "You can add some service offer and some reference.(It is not mandatory but it's better)"
+	},
+	
+	"job":
+	{
+	    "dev": "Developer",
+	    "entre": "Contractor",
+	    "inv": "Investor"
+	},
+
+	"user":
+	{
+	    "contact": "Contact me:",
+	    "offer": "My service offer :",
+	    "ref": "My reference :",
+	    "profile": "Your profile",
+	    "create": "Create your profile !",
+	    "edit": "Edit your profile",
+	    "account": "Modifiate your account",
+	    "out": "Log out"
+	}
+    }
+}

@@ -36,6 +36,18 @@
 	    <% else %>
 	    <li><%= link_to "Mon profil", "/users/sign_in", class: "up" %></li>
 	    <% end %>
+	    <li>
+	      <div class="dropdown">
+		<button class="btn btn-default dropdown-toggle language" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		  Language
+		  <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		  <li><%= link_to "Fr", "/langue_fr" %></li>
+		  <li><%= link_to "En", "/langue_en" %></li>
+		</ul>
+	      </div>
+	    </li>
 	  </ul>
 	</div><!-- /.navbar-collapse -->
       </div>

@@ -8,5 +8,15 @@ class PagesController < ApplicationController
   
   def ref
   end
+
+  def langue_fr
+    $langue = "fr"
+    redirect_to "/"
+  end
+
+  def langue_en
+    $langue = "en"
+    redirect_to "/"
+  end
   
 end

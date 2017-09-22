@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   get '/users' => 'users#index'
+  
   root 'pages#home'
+  
   resources :users do
     resource :profile
   end
+  
   get 'about' => 'pages#about'
+
+  get 'langue_fr' => 'pages#langue_fr'
+
+  get 'langue_en' => 'pages#langue_en'
+  
   get 'ref' => 'pages#ref'
 
   # The priority is based upon order of creation: first created -> highest priority.

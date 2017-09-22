@@ -1,15 +1,15 @@
 <div class="home_text text-center container-fluid">
-  <h1>Welcome to my_app</h1>
-  <h3>A membership site where you can find people.</h3>
+  <h1><%= $tab_word["#{$langue}"]["home"]["home_1"]%></h1>
+  <h3><%= $tab_word["#{$langue}"]["home"]["home_2"]%></h3>
   <br /><br /><br />
   <% if user_signed_in? %>
   <div class="container home-signed-links">
       <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 	  <div class="well block-visit">
-	    <h2 class="text-center Commu">The Community</h2>
-	    <p class="text-center Commu">Visit the community to meet other people</p>
-	    <%= link_to "Visit the community", users_path, class: 'btn btn-default btn-lg btn-block'%>
+	    <h2 class="text-center Commu"><%= $tab_word["#{$langue}"]["home"]["home_3"]%></h2>
+	    <p class="text-center Commu"><%= $tab_word["#{$langue}"]["home"]["home_4"]%></p>
+	    <%= link_to "#{$tab_word["#{$langue}"]["home"]["home_5"]}", users_path, class: 'btn btn-default btn-lg btn-block'%>
 	  </div>
 	</div>
       </div>

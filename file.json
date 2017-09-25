@@ -59,6 +59,14 @@
 	{
 	    "logo": "Communauté du Logo",
 	    "logo_1": "Bienvenue dans la communauté de Logo. Les utilisateurs doivent avoir un profil complet pour apparaître dans la communauté."
+	},
+
+	"sign":
+	{
+	    "log": "Se connecter",
+	    "sign": "S'inscrire",
+	    "forget": "Oublie de mot de passe ?",
+	    "send_pass": "Envoyez moi un nouveau mot de passe"
 	}
     },
     "en":
@@ -121,6 +129,14 @@
 	{
 	    "logo": "Logo Community",
 	    "logo_1": "Welcome to the Logo community. Users must fill out a profile in order to be visible in the community."
+	},
+	
+	"sign":
+	{
+	    "log": "Log in",
+	    "sign": "Sign up",
+	    "forget": "Forgot your password ?",
+	    "send_pass": "Send me reset password instructions"
 	}
     }
 }

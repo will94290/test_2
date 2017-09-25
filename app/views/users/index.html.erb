@@ -1,18 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h1 class="text-center">Logo Community</h1>
-      <p class="text-center">Welcome to the Logo community. Users must fill out a profile in order to be visible in the community.</p>
+      <h1 class="text-center"><%= $tab_word["#{$langue}"]["index"]["logo"] %></h1>
+      <p class="text-center"><%= $tab_word["#{$langue}"]["index"]["logo_1"] %></p>
       <%= form_tag "/users", method: "get" do %>
       <form class="form-inline my-1 my-lg-0 well">
-	<ul class="list-inline clearfix">
-	<li><input class="form-control mr-sm-2" type="text" name="name" placeholder="First name" aria-label="Search"></li>
-	<li><input class="form-control mr-sm-2" type="text" name="second" placeholder="Last name" aria-label="Search"></li>
+	<ul class="list-inline clearfix text-center">
+	  <% if $langue == "en" %>
+	  <li><input class="form-control" type="text" name="name" placeholder="Name" aria-label="Search"></li>
+	  <% else %>
+	  <li><input class="form-control" type="text" name="name" placeholder="Nom" aria-label="Search"></li>
+	  <% end %>
 	<li><select class="form-control" name="job">
-	  <option>Job title</option>
-	  <option>Developer</option>
-	  <option>Entrepreneur</option>
-	  <option>Investor</option>
+	  <option><%= $tab_word["#{$langue}"]["job"]["job"] %></option>
+	  <option><%= $tab_word["#{$langue}"]["job"]["dev"] %></option>
+	  <option><%= $tab_word["#{$langue}"]["job"]["entre"] %></option>
+	  <option><%= $tab_word["#{$langue}"]["job"]["inv"] %></option>
 	</select></li>
 	<li><button class="btn btn-online-success my-2 my-sm-0" type="submit">Search</button></li>
 	</ul>
@@ -34,7 +37,13 @@
 	      <%= link_to user do %>
 	      <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
 	      <% end %>
-	      <p><%= user.profile.job_title %></p>
+	      <% if user.profile.job_title == "Developer" || user.profile.job_title == "Developpeur" %>
+	      <p><%= $tab_word["#{$langue}"]["job"]["dev"] %></p>
+	       <% elsif user.profile.job_title == "Investor" || user.profile.job_title == "Investisseur" %>
+	      <p><%= $tab_word["#{$langue}"]["job"]["inv"] %></p>
+	       <% elsif user.profile.job_title == "Contractor" || user.profile.job_title == "Entrepreneur" %>
+	      <p><%= $tab_word["#{$langue}"]["job"]["entre"] %></p>
+	      <% end %>
 	    </div>
 	  </div>
 	</li>

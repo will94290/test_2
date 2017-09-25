@@ -31,7 +31,8 @@
 	{
 	    "dev": "Developpeur",
 	    "entre": "Entrepreneur",
-	    "inv": "Investisseur"
+	    "inv": "Investisseur",
+	    "job": "Poste de travail"
 	},
 	
 	"user":
@@ -52,6 +53,12 @@
 	    "about": "A propos",
 	    "profile": "Mon profil",
 	    "langue": "Langage"
+	},
+
+	"index":
+	{
+	    "logo": "Communauté du Logo",
+	    "logo_1": "Bienvenue dans la communauté de Logo. Les utilisateurs doivent avoir un profil complet pour apparaître dans la communauté."
 	}
     },
     "en":
@@ -86,7 +93,8 @@
 	{
 	    "dev": "Developer",
 	    "entre": "Contractor",
-	    "inv": "Investor"
+	    "inv": "Investor",
+	    "job": "Job title"
 	},
 
 	"user":
@@ -107,6 +115,12 @@
 	    "about": "About",
 	    "profile": "My profile",
 	    "langue": "Language"
+	},
+
+	"index":
+	{
+	    "logo": "Logo Community",
+	    "logo_1": "Welcome to the Logo community. Users must fill out a profile in order to be visible in the community."
 	}
     }
 }

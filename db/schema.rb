@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20170907102118) do
 
-  create_table "plans", force: :cascade do |t|
-    t.string   "name"
-    t.decimal  "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "first_name"

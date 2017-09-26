@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  $filepath = 'file.json'
+  $filepath = '/home/mako/test_2/file.json'
   
   $country = File.read($filepath)
   
@@ -14,3 +14,4 @@ class ApplicationController < ActionController::Base
   $langue = "fr"
   
 end
+

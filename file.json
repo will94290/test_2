@@ -20,7 +20,7 @@
 	{
 	    "profile_error": "empêche ce formulaire d'être sauvgardé",
 	    "update": "Mettre à jour",
-	    "error": "erreur(s)",
+	    "error": "erreur",
 	    "plus": "Vous pouvez ajouter les services que vous offrez ou vos références.(Ce n'est pas obligatoire, mais conseillé).",
 	    "edit": "Changez votre profile",
 	    "edit_1": "Soiyez membre de la communauté et faîtes vous un profil !",
@@ -90,7 +90,7 @@
 	{
 	    "profile_error": "prohibited this article from being saved:",
 	    "update": "Update Profile",
-	    "error": "error(s)",
+	    "error": "error",
 	    "plus": "You can add some service offer and some reference.(It is not mandatory but it's better)",
 	    "edit": "Edit Your Profile",
 	    "edit_1": "Be a part of our community and fill out your profile !",

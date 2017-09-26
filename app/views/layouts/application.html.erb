@@ -26,15 +26,13 @@
 	<div class="collapse navbar-collapse" id="main-nav-collapse">
 	  <ul class="nav navbar-nav navbar-right">
 	    <% if user_signed_in? %>
-	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["com"]}", users_path, class: "up" %></li>
-	    <% else %>
-	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["com"]}", "/users/sign_in", class: "up" %></li>
-	    <% end %>
 	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["about"]}", "/about", class: "up"%></li>
-	    <% if user_signed_in? %>
 	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["profile"]}", "/users/#{current_user.id}", class: "up" %></li>
+	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["out"]}", destroy_user_session_path, method: :delete, class: "up" %></li>
 	    <% else %>
-	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["profile"]}", "/users/sign_in", class: "up" %></li>
+	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["about"]}", "/about", class: "up"%></li>
+	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["sign"]}", "/users/sign_up", class: "up" %></li>
+	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["log"]}", "/users/sign_in", class: "up" %></li>
 	    <% end %>
 	    <li>
 	      <div class="dropdown">

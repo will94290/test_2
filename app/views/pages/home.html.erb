@@ -1,18 +1,21 @@
 <div class="home_text text-center container-fluid">
   <h1><%= $tab_word["#{$langue}"]["home"]["home_1"]%></h1>
-  <h3><%= $tab_word["#{$langue}"]["home"]["home_2"]%></h3>
-  <br /><br /><br />
+  <h1><%= $tab_word["#{$langue}"]["home"]["home_2"]%></h1>
+  <br /><br />
+  <%= link_to "Rejoindre le réseau","/users/sign_up", class: 'btn premier btn-lg', style: 'border-radius: 170px' %>
+  &nbsp; &nbsp; &nbsp; &nbsp;
   <% if user_signed_in? %>
-  <div class="container home-signed-links">
-      <div class="row">
-	<div class="col-md-6 col-md-offset-3">
-	  <div class="well block-visit">
-	    <h2 class="text-center Commu"><%= $tab_word["#{$langue}"]["home"]["home_3"]%></h2>
-	    <p class="text-center Commu"><%= $tab_word["#{$langue}"]["home"]["home_4"]%></p>
-	    <%= link_to "#{$tab_word["#{$langue}"]["home"]["home_5"]}", users_path, class: 'btn btn-default btn-lg btn-block'%>
-	  </div>
-	</div>
-      </div>
-  </div>
+  <%= link_to "Consulter l'annuaire", users_path, class: 'btn second btn-lg', style: 'border-radius: 170px' %>
+  <% else %>
+  <%= link_to "Consulter l'annuaire", "/users/sign_in", class: 'btn second btn-lg', style: 'border-radius: 170px' %>
+  <% end %>
+  <br /><br />
+  
 </div>
-<% end %>
+
+<br /><br /><br />
+
+<div class="container">
+  <img src="geoloc.jpg" alt="image bleue" />
+</div>
+

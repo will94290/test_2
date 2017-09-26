@@ -3,8 +3,8 @@
     {
 	"home":
 	{
-	    "home_1": "Bienvenue sur mon site",
-	    "home_2": "Un site d'adhésion où vous pouvez trouver des professionnels",
+	    "home_1": "L'annuaire des professionnels",
+	    "home_2": "de la concertation",
 	    "home_3": "La Communauté",
 	    "home_4": "Visite la communauté pour rencontrer d'autre gens",
 	    "home_5": "Visite la communauté"
@@ -52,7 +52,11 @@
 	    "com": "Communauté",
 	    "about": "A propos",
 	    "profile": "Mon profil",
-	    "langue": "Langage"
+	    "create":"Créer un profil",
+	    "langue": "Langue",
+	    "sign": "Inscription",
+	    "log": "Connexion",
+	    "out": "Déconexion"
 	},
 
 	"index":
@@ -83,8 +87,8 @@
     {
 	"home":
 	{
-	    "home_1": "Welcome to my_app",
-	    "home_2": "A membership site where you can find people.",
+	    "home_1": "The directory of the professionals",
+	    "home_2": "of the dialogue",
 	    "home_3": "The Community",
 	    "home_4": "Visit the community to meet other people",
 	    "home_5": "Visit the community"
@@ -132,7 +136,11 @@
 	    "com": "Community",
 	    "about": "About",
 	    "profile": "My profile",
-	    "langue": "Language"
+	    "create":"Create a profile",
+	    "langue": "Language",
+	    "sign": "Sign up",
+	    "log": "Log in",
+	    "out": "Log out"
 	},
 
 	"index":

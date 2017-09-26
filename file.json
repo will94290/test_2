@@ -67,6 +67,16 @@
 	    "sign": "S'inscrire",
 	    "forget": "Oublie de mot de passe ?",
 	    "send_pass": "Envoyez moi un nouveau mot de passe"
+	},
+
+	"modifiate":
+	{
+	    "edit": "Modification du compte",
+	    "update": "Mettre à jour",
+	    "cancel": "Supprimer mon compte",
+	    "confirm": "Êtes vous sûr ?",
+	    "not": "Pas satisfait ?",
+	    "back": "Retour"
 	}
     },
     "en":
@@ -137,6 +147,16 @@
 	    "sign": "Sign up",
 	    "forget": "Forgot your password ?",
 	    "send_pass": "Send me reset password instructions"
+	},
+
+	"modifiate":
+	{
+	    "edit": "Edit User",
+	    "update": "Update",
+	    "cancel": "Cancel my account",
+	    "confirm": "Are you sure ?",
+	    "not": "Unhappy ?",
+	    "back": "Back"
 	}
     }
 }

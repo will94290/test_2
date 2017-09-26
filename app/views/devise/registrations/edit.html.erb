@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+      <h2><%= $tab_word["#{$langue}"]["modifiate"]["update"] %></h2>
       
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
@@ -16,34 +16,50 @@
       <% end %>
       
       <div class="field form-group">
-	<%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+	<% if $langue == "en" %>
+	<%= f.label :new_password %> <i>(leave blank if you don't want to change it)</i><br />
+	<% else %>
+	<%= f.label :nouveau_mot_de_passe %> <i>(laisser vide si vous ne voulez pas le changer)</i><br />
+	<% end %>
 	<%= f.password_field :password, autocomplete: "off", class: "form-control" %>
 	<% if @minimum_password_length %>
 	<br />
+	<% if $langue == "en" %>
 	<em><%= @minimum_password_length %> characters minimum</em>
+	<% else %>
+	<em><%= @minimum_password_length %> caractères minimum</em>
+	<% end %>
     <% end %>
       </div>
       
       <div class="field form-group">
+	<% if $langue == "en" %>
 	<%= f.label :password_confirmation %><br />
+	<% else %>
+	<%= f.label :confirmation_mot_de_passe %><br />
+	<% end %>
 	<%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
       </div>
       
       <div class="field form-group">
+	<% if $langue == "en" %>
 	<%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+	<% else %>
+	<%= f.label :mot_de_passe_actuel %> <i>(nous en avons besoin pour confirmer les modifications)</i><br />
+	<% end %>
     <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
       </div>
       
       <div class="actions form-group">
-	<%= f.submit "Update", class: "btn btn-primary" %>
+	<%= f.submit "#{$tab_word["#{$langue}"]["modifiate"]["update"]}", class: "btn btn-primary" %>
       </div>
       <% end %>
       
-      <h3>Cancel my account</h3>
+      <h3><%= $tab_word["#{$langue}"]["modifiate"]["cancel"] %></h3>
       
-      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+      <p><%= $tab_word["#{$langue}"]["modifiate"]["not"] %> <%= button_to "#{$tab_word["#{$langue}"]["modifiate"]["update"]}", registration_path(resource_name), data: { confirm: "#{$tab_word["#{$langue}"]["modifiate"]["cancel"]}" }, method: :delete, class: "btn btn-danger" %></p>
       
-      <%= link_to "Back", :back %>
+      <%= link_to "#{$tab_word["#{$langue}"]["modifiate"]["back"]}", :back %>
     </div>
   </div>
 </div>

@@ -1,17 +1,22 @@
-.btn-lg
-{
-    border-radius: 170px;
-}
-    
 .premier
 {
     background-color: #44a08d;
     color: white;
+    border-color: white;
+    width: 300px;
+    height: 65px
 }
 
 .second
 {
     background-color: white;
     color: #44a08d;
+    border-color: #44a08d;
+    width: 300px;
+    height: 65px
 }
 
+.sous-texte
+{
+    font-size: 20px;
+}

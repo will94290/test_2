@@ -1,21 +1,35 @@
 <div class="home_text text-center container-fluid">
-  <h1><%= $tab_word["#{$langue}"]["home"]["home_1"]%></h1>
-  <h1><%= $tab_word["#{$langue}"]["home"]["home_2"]%></h1>
-  <br /><br />
-  <%= link_to "Rejoindre le réseau","/users/sign_up", class: 'btn premier btn-lg', style: 'border-radius: 170px' %>
+  <br /><br /><br /><br /><br /><br />
+  <h1 style="font-size: 80px"><%= $tab_word["#{$langue}"]["home"]["home_1"]%></h1>
+  <h1 style="font-size: 80px"><%= $tab_word["#{$langue}"]["home"]["home_2"]%></h1>
+  <br /><br /><br /><br /><br /><br /><br/><br />
+  <%= link_to "Rejoindre le réseau","/users/sign_up", class: 'btn premier btn-lg', style: 'border-radius: 170px; border-color: white; font-size: 28px' %>
   &nbsp; &nbsp; &nbsp; &nbsp;
   <% if user_signed_in? %>
-  <%= link_to "Consulter l'annuaire", users_path, class: 'btn second btn-lg', style: 'border-radius: 170px' %>
+  <%= link_to "Consulter l'annuaire", users_path, class: 'btn second btn-lg', style: 'border-radius: 170px; border-color: #44a08d; font-size: 28px' %>
   <% else %>
-  <%= link_to "Consulter l'annuaire", "/users/sign_in", class: 'btn second btn-lg', style: 'border-radius: 170px' %>
+  <%= link_to "Consulter l'annuaire", "/users/sign_in", class: 'btn second btn-lg', style: 'border-radius: 170px; border-color: #44a08d; font-size: 28px' %>
   <% end %>
-  <br /><br />
+  <br /><br /><br /><br />
   
 </div>
 
-<br /><br /><br />
+<br /><br /><br /><br /><br />
 
 <div class="container">
-  <img src="geoloc.jpg" alt="image bleue" />
+  <ul class="list-inline clearfix">
+  <li class="col-md-2 col-md-offset-1 text-center">
+    <%= image_tag "geoloc.png", alt: "image bleue", width: 134, height:150 %>
+    <p class="sous-texte"><br />Trouver des professionnels dans votre région</p>
+  </li>
+  <li class="col-md-2 col-md-offset-2 text-center">
+    <%= image_tag "search.png", alt: "image bleue", width: 230, height: 150 %>
+    <p class="sous-texte"><br />Rechercher le professionnel le plus adéquat</p>
+  </li>
+  <li class="col-md-3 col-md-offset-2 text-center">
+    <%= image_tag "chat.png", alt: "image bleue", width: 150, height: 150 %>
+    <p class="sous-texte"><br />Rentrer en contact avec le professionnel de votre choix</p>
+  </li>
+  </ul>
 </div>
 

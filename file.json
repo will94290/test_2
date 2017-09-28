@@ -6,8 +6,15 @@
 	    "home_1": "L'annuaire des professionnels",
 	    "home_2": "de la concertation",
 	    "home_3": "La Communauté",
-	    "home_4": "Visite la communauté pour rencontrer d'autre gens",
-	    "home_5": "Visite la communauté"
+	    "home_4": "Rejoindre le réseau",
+	    "home_5": "Consulter l'annuaire",
+	    "home_6": "Trouver des professionnels dans votre région",
+	    "home_7": "Rechercher le professionnel le plus adéquat",
+	    "home_8": "Rentrer en contact avec le professionnel de votre choix",
+	    "home_9": "Vous êtes un professionnel de la concertation",
+	    "home_10": "Créer un profile",
+	    "home_11": "Vous recherchez un professionnel de la concertation ?",
+	    "home_12": "Inscription"
 	},
 	
 	"about":
@@ -90,8 +97,15 @@
 	    "home_1": "The directory of the professionals",
 	    "home_2": "of the dialogue",
 	    "home_3": "The Community",
-	    "home_4": "Visit the community to meet other people",
-	    "home_5": "Visit the community"
+	    "home_4": "Join the community",
+	    "home_5": "Consult the directory",
+	    "home_6": "Find professionals in your region",
+	    "home_7": "Look for the most adequate professional",
+	    "home_8": "Get in touch with the professional of your choice",
+	    "home_9": "Are you a professional of the dialogue ?",
+	    "home_10": "Create a profil",
+	    "home_11": "Look for professionals of the dialogue ?",
+	    "home_12": "Inscription"
 	},
 	
 	"about":

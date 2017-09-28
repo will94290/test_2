@@ -1,4 +1,17 @@
-<div class="text-center">
-  <h1><%= $tab_word["#{$langue}"]["about"]["about_1"]%></h1>
-  <h3><%= $tab_word["#{$langue}"]["about"]["about_2"]%></h3>
+<div class="container">
+  <h1 style="color: #1A90AB"><b><%= $tab_word["#{$langue}"]["about"]["about_1"]%></b></h1>
+  <h3 class="sous-texte" style="font-size: 25px"><%= $tab_word["#{$langue}"]["about"]["about_2"]%></h3>
+  <br />
+  <h1 class="text-center" style="color: #1A90AB"><b><%= $tab_word["#{$langue}"]["about"]["about_3"]%></b></h1>
+</div>
+
+<br /><br />
+
+<div class="container">
+  <div class="col-md-3 col-md-offset-3">
+    <%= image_tag "debatlab.jpg", alt: "logo", width: 150, height: 65 %>
+  </div>
+  <div class="col-md-3 col-md-offset-1">
+    <%= image_tag "Logo.png", alt: "logo", width: 115, height: 115 %>
+    </div>
 </div>

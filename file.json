@@ -20,7 +20,8 @@
 	"about":
 	{
 	    "about_1": "A propos de nous",
-	    "about_2": "Notre compagnie a pour but de créer une communauté exclusive pour les développeurs, les investisseurs et les entrepreneurs pour qu'ils puissent se rencontrer"
+	    "about_2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	    "about_3": "Une initiative de :"
 	},
 	
 	"profile":
@@ -111,7 +112,8 @@
 	"about":
 	{
 	    "about_1": "About us",
-	    "about_2": "Our compagny focuses on creating an exclusive community for developers, investors and entrepreneurs to meet."
+	    "about_2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	    "about_3": "An initiative of :"
 	},
 
 	"profile":

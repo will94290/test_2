@@ -18,16 +18,16 @@
 <div class="container">
   <ul class="list-inline clearfix">
   <li class="col-md-2 col-md-offset-1 text-center">
-    <%= image_tag "geoloc.png", alt: "image bleue", width: 134, height:150 %>
-    <p class="sous-texte"><br /><b><%= $tab_word["#{$langue}"]["home"]["home_6"] %></b></p>
+    <%= image_tag "geoloc.png", alt: "image bleue", width: 124, height:140 %>
+    <p class="sous-texte"><br /><%= $tab_word["#{$langue}"]["home"]["home_6"] %></p>
   </li>
   <li class="col-md-2 col-md-offset-2 text-center">
-    <%= image_tag "search.png", alt: "image bleue", width: 230, height: 150 %>
-    <p class="sous-texte"><br /><b><%= $tab_word["#{$langue}"]["home"]["home_7"] %></b></p>
+    <%= image_tag "search.png", alt: "image bleue", width: 210, height: 140 %>
+    <p class="sous-texte"><br /><%= $tab_word["#{$langue}"]["home"]["home_7"] %></p>
   </li>
   <li class="col-md-3 col-md-offset-2 text-center">
-    <%= image_tag "chat.png", alt: "image bleue", width: 150, height: 150 %>
-    <p class="sous-texte"><br /><b><%= $tab_word["#{$langue}"]["home"]["home_8"] %></b></p>
+    <%= image_tag "chat.png", alt: "image bleue", width: 140, height: 140 %>
+    <p class="sous-texte"><br /><%= $tab_word["#{$langue}"]["home"]["home_8"] %></p>
   </li>
   </ul>
 </div>
@@ -36,11 +36,11 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-5 col-md-offset-0 text-center">
+    <div class="col-md-5 col-md-offset-1 text-center">
       <div class="well" style="border-radius: 20px; border-color: #44a08d; background-color: white">
 	<br /><br />
 	<%= image_tag "pointeur.png", alt: "image bleue", width: 150, height: 100 %>
-	<p class="sous-texte"><br /><br /><b><%= $tab_word["#{$langue}"]["home"]["home_9"] %></b></p>
+	<p class="sous-texte" style="padding-right: 24px"><br /><br /><b><%= $tab_word["#{$langue}"]["home"]["home_9"] %></b></p>
 	<br />
 	<% if user_signed_in? %>
 	<%= link_to "#{$tab_word["#{$langue}"]["home"]["home_10"]}", "/users/#{current_user.id}/profile/edit", class: 'btn petit_prem', style: 'border-radius: 170px; border-color: white; font-size: 20px' %>
@@ -50,7 +50,7 @@
 	<br /><br /><br />
       </div>
     </div>
-    <div class="col-md-5 col-md-offset-2 text-center">
+    <div class="col-md-5 text-center">
       <div class="well" style="border-radius: 20px; border-color: white; background-color: #44a08d">
 	<br /><br />
 	<%= image_tag "worldwide white.png", alt: "image bleue", width: 150, height: 100 %>

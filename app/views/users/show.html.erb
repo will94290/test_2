@@ -2,64 +2,78 @@
   <div class="row">
     <div class="col-md-3 text-center">
       <% if @user.profile != nil %>
+      <% if @user.profile.avatar.url != "/image/original/missing.png" %>
       <%= image_tag @user.profile.avatar.url, class: "avatar-show-img"%>
+      <% else %>
+      <%= image_tag "facebook-geek-avatar.jpg", alt: "avatar", class:"avatar-show-img" %>
+      <% end %>
       <% end %>
     </div>
     <% if @user.profile != nil %>
     <div class="col-md-6">
-      <h1> <%= @user.profile.first_name %> <%= @user.profile.last_name%></h1>
+      <h1> <%= @user.profile.first_name.capitalize %> <%= @user.profile.last_name.capitalize %></h1>
+      <br />
       <% if @user.profile.job_title == "Developer" || @user.profile.job_title == "Developpeur"%>
-      <h3> <span><%= job_title_icon %> </span><%= $tab_word["#{$langue}"]["job"]["dev"]%> <i class="fa fa-location-arrow".html_safe></i> <%= @user.profile.city %></h3>
+      <h4> <span><%= job_title_icon %> </span><%= $tab_word["#{$langue}"]["job"]["dev"]%></h4>
       <% elsif @user.profile.job_title == "Investor" || @user.profile.job_title == "Investisseur"%>
-      <h3> <span><%= job_title_icon %> </span><%= $tab_word["#{$langue}"]["job"]["inv"]%> <i class="fa fa-location-arrow".html_safe></i> <%= @user.profile.city %></h3>
+      <h4> <span><%= job_title_icon %> </span><%= $tab_word["#{$langue}"]["job"]["inv"]%></h4>
       <% elsif @user.profile.job_title == "Contractor" || @user.profile.job_title == "Entrepreneur"%>
-      <h3> <span><%= job_title_icon %> </span><%= $tab_word["#{$langue}"]["job"]["entre"]%> <i class="fa fa-location-arrow".html_safe></i> <%= @user.profile.city %></h3>
+      <h4> <span><%= job_title_icon %> </span><%= $tab_word["#{$langue}"]["job"]["entre"]%></h4>
       <% end %>
-      <div class="well profile-block profile-contact">
-	<h4><%= $tab_word["#{$langue}"]["user"]["contact"] %></h4>
-	<ul>
-	  <li><h5><%= @user.profile.phone_number %></h5></li>
-	  <li><h5><%= @user.profile.contact_email %></h5></li>
-	</ul>
-      </div>
-      <div class="well profile-block profile-description">
-	<h4>Description :</h4>
-	<h5><%= @user.profile.description %></h5>
-      </div>
-      <% if @user.profile.service_offer != nil && @user.profile.service_offer.length > 5 %>
-      <div class="well profile-block profile-contact">
-	<h4><%= $tab_word["#{$langue}"]["user"]["offer"] %></h4>
-	<h5><%= @user.profile.service_offer %></h5>
-      </div>
-      <% end %>
-       <% if @user.profile.reference != nil && @user.profile.reference.length > 5 %>
-      <div class="well profile-block profile-description">
-	<h4><%= $tab_word["#{$langue}"]["user"]["ref"] %></h4>
-	<h5><%= @user.profile.reference %></h5>
-      </div>
-      <% end %>
-      <% end %>
+      <h4><i class="fa fa-location-arrow".html_safe></i> <%= @user.profile.city.capitalize %>
+	&nbsp;
+	<i class="fa fa-twitter".html_safe></i>
+	&nbsp;
+	<i class="fa fa-linkedin".html_safe></i></h4>
+      <h4><i class="fa fa-envelope".html_safe></i>&nbsp;&nbsp;<%= @user.profile.contact_email.capitalize %></h4>
+      	<h4><i class="fa fa-phone-square".html_safe></i>&nbsp;&nbsp;<%= @user.profile.phone_number %>
     </div>
-    <% if @user.id == current_user.id %>
-    <% if @user.profile == nil %>
-    <div class="col-md-6 col-md-offset-3">
-      <div class="well text-center profile-btn">
-	<h2> <%= $tab_word["#{$langue}"]["user"]["profile"] %> </h2>
-	<%= link_to "#{$tab_word["#{$langue}"]["user"]["create"]}", new_user_profile_path(user_id: current_user.id), class: 'btn btn-default btn-lg btn-block text-center' %>
-	<%= link_to "#{$tab_word["#{$langue}"]["user"]["account"]}", edit_user_registration_path, class: "btn btn-default btn-lg btn-block text-center" %>
-	<%= link_to "#{$tab_word["#{$langue}"]["user"]["out"]}", destroy_user_session_path, method: :delete, class: "btn btn-default btn-lg btn-block text-center" %>
-      </div>
-    </div>
-    <% else %>
-    <div class="col-md-6 col-md-offset-3">
-      <div class="well text-center profile-btn">
-	<h2> <%= $tab_word["#{$langue}"]["user"]["profile"] %> </h2>
-	<%= link_to "#{$tab_word["#{$langue}"]["user"]["edit"]}", edit_user_profile_path(user_id: current_user.id), class: 'btn btn-default btn-lg btn-block text-center' %>
-	<%= link_to "#{$tab_word["#{$langue}"]["user"]["account"]}", edit_user_registration_path, class: "btn btn-default btn-lg btn-block text-center" %>
-	<%= link_to "#{$tab_word["#{$langue}"]["user"]["out"]}", destroy_user_session_path, method: :delete, class: "btn btn-default btn-lg btn-block text-center" %>
-      </div>
-    </div>
-    <% end %>
-    <% end %>
   </div>
 </div>
+
+
+
+<div class="container">
+  <h3>Description :</h3>
+  <hr />
+  <h4><%= @user.profile.description %></h4>
+</div>
+<br />
+<% if @user.profile.service_offer != nil && @user.profile.service_offer.length > 1 %>
+<div class="container">
+  <h3><%= $tab_word["#{$langue}"]["user"]["offer"] %></h3>
+  <hr />
+  <h4 style="padding-right: 15px"><%= @user.profile.service_offer %></h4>
+</div>
+<% end %>
+<br />
+<% if @user.profile.reference != nil && @user.profile.reference.length > 1 %>
+<div class="container">
+  <h3><%= $tab_word["#{$langue}"]["user"]["ref"] %></h3>
+  <hr />
+  <h4><%= @user.profile.reference %></h4>
+</div>
+<% end %>
+<% end %>
+</div>
+
+<br /><br />
+
+<% if @user.id == current_user.id %>
+<% if @user.profile == nil %>
+<div class="container">
+    <%= link_to "#{$tab_word["#{$langue}"]["user"]["create"]}", new_user_profile_path(user_id: current_user.id), class: 'btn btn-default btn-lg btn-block text-center' %>
+    <%= link_to "#{$tab_word["#{$langue}"]["user"]["account"]}", edit_user_registration_path, class: "btn btn-default btn-lg btn-block text-center" %>
+</div>
+<% else %>
+<div class="container">
+  <center>
+    <%= link_to "#{$tab_word["#{$langue}"]["user"]["edit"]}", edit_user_profile_path(user_id: current_user.id),  class: 'btn petit_prem', style: 'border-radius: 170px; border-color: white; font-size: 20px; padding-left: 20px; padding-right: 20px' %>
+    &nbsp;&nbsp;
+  <%= link_to "#{$tab_word["#{$langue}"]["user"]["account"]}", edit_user_registration_path,  class: 'btn petit_sec', style: 'border-radius: 170px; border-color: #1A90AB; font-size: 20px; padding-left: 20px; padding-right: 20px' %>
+  </center>
+</div>
+<% end %>
+<% end %>
+
+<br /><br />

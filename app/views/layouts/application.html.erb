@@ -7,7 +7,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <!-- <link href="https://bootswatch.com/paper/bootstrap.min.css" rel="stylesheet"> -->
     <%= csrf_meta_tags %>
   </head>
   
@@ -28,6 +27,7 @@
 	  <ul class="nav navbar-nav navbar-right">
 	    <% if user_signed_in? %>
 	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["about"]}", "/about", class: "up"%></li>
+	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["com"]}", "/users", class: "up"%></li>
 	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["profile"]}", "/users/#{current_user.id}", class: "up" %></li>
 	    <li><%= link_to "#{$tab_word["#{$langue}"]["layout"]["out"]}", destroy_user_session_path, method: :delete, class: "up" %></li>
 	    <% else %>

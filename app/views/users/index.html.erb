@@ -29,7 +29,11 @@
 	    <div class="col-sm-4 text-center">
 	      <% if user.profile.avatar %>
 	      <%= link_to user do %>
-	      <%= image_tag user.profile.avatar.url, class: 'user-index-avatar' %>
+	      <% if user.profile.avatar.url != "/image/original/missing.png" %>
+	      <%= image_tag user.profile.avatar.url, class: "user-index-avatar"%>
+	      <% else %>
+	      <%= image_tag "facebook-geek-avatar.jpg", alt: "avatar", class:"user-index-avatar" %>
+	      <% end %>
 	      <% end %>
 	      <% end %>
 	    </div>

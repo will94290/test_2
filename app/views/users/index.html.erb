@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid recherche">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h1 class="text-center"><%= $tab_word["#{$langue}"]["index"]["logo"] %></h1>
@@ -11,16 +11,26 @@
 	  <% else %>
 	  <li><input class="form-control" type="text" name="name" placeholder="Nom" aria-label="Search"></li>
 	  <% end %>
-	<li><select class="form-control" name="job">
-	  <option><%= $tab_word["#{$langue}"]["job"]["job"] %></option>
+	  <li><select class="form-control" name="job">
+	      <option><%= $tab_word["#{$langue}"]["job"]["job"] %></option>
 	  <option><%= $tab_word["#{$langue}"]["job"]["dev"] %></option>
-	  <option><%= $tab_word["#{$langue}"]["job"]["entre"] %></option>
-	  <option><%= $tab_word["#{$langue}"]["job"]["inv"] %></option>
-	</select></li>
-	<li><button class="btn btn-online-success my-2 my-sm-0" type="submit">Search</button></li>
+	      <option><%= $tab_word["#{$langue}"]["job"]["entre"] %></option>
+	      <option><%= $tab_word["#{$langue}"]["job"]["inv"] %></option>
+	  </select></li>
+	  <li><button class="btn btn-online-success my-2 my-sm-0" type="submit">Search</button></li>
 	</ul>
       </form>
       <% end %>
+    </div>
+  </div>
+  <br /><br />
+</div>
+
+<br /><br />
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
       <ul class="list-unstyled">
 	<% @users.each do |user| %>
 	<% if user.profile != nil %>
@@ -30,12 +40,12 @@
 	      <% if user.profile.avatar %>
 	      <%= link_to user do %>
 	      <% if user.profile.avatar.url != "/image/original/missing.png" %>
-	      <%= image_tag user.profile.avatar.url, class: "user-index-avatar"%>
-	      <% else %>
-	      <%= image_tag "facebook-geek-avatar.jpg", alt: "avatar", class:"user-index-avatar" %>
-	      <% end %>
-	      <% end %>
-	      <% end %>
+		 <%= image_tag user.profile.avatar.url, class: "user-index-avatar"%>
+		 <% else %>
+		 <%= image_tag "facebook-geek-avatar.jpg", alt: "avatar", class:"user-index-avatar" %>
+		 <% end %>
+		 <% end %>
+		 <% end %>
 	    </div>
 	    <div>
 	      <%= link_to user do %>
@@ -43,9 +53,9 @@
 	      <% end %>
 	      <% if user.profile.job_title == "Developer" || user.profile.job_title == "Developpeur" %>
 	      <p><%= $tab_word["#{$langue}"]["job"]["dev"] %></p>
-	       <% elsif user.profile.job_title == "Investor" || user.profile.job_title == "Investisseur" %>
+	      <% elsif user.profile.job_title == "Investor" || user.profile.job_title == "Investisseur" %>
 	      <p><%= $tab_word["#{$langue}"]["job"]["inv"] %></p>
-	       <% elsif user.profile.job_title == "Contractor" || user.profile.job_title == "Entrepreneur" %>
+	      <% elsif user.profile.job_title == "Contractor" || user.profile.job_title == "Entrepreneur" %>
 	      <p><%= $tab_word["#{$langue}"]["job"]["entre"] %></p>
 	      <% end %>
 	    </div>
@@ -53,7 +63,7 @@
 	</li>
 	<% end %>
 	<% end %>
-      </ul>
+	 </ul>
     </div>
   </div>
 </div>

@@ -30,13 +30,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <ul class="list-unstyled">
+    <div>
+      <center><ul class="list-unstyled">
 	<% @users.each do |user| %>
 	<% if user.profile != nil %>
 	<li>
-	  <div class="well row <%= cycle('white-bg', '') %>">
-	    <div class="col-sm-4 text-center">
+	  <div class="well row col-md-4 index-pers" style="margin-left: 80px;">
+	    <div class="col-md-4">
 	      <% if user.profile.avatar %>
 	      <%= link_to user do %>
 	      <% if user.profile.avatar.url != "/image/original/missing.png" %>
@@ -47,9 +47,9 @@
 		 <% end %>
 		 <% end %>
 	    </div>
-	    <div>
+	    <div class="col-md-8">
 	      <%= link_to user do %>
-	      <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
+	      <h3><b><%= user.profile.first_name.capitalize %> <%= user.profile.last_name.capitalize %></b></h3>
 	      <% end %>
 	      <% if user.profile.job_title == "Developer" || user.profile.job_title == "Developpeur" %>
 	      <p><%= $tab_word["#{$langue}"]["job"]["dev"] %></p>
@@ -63,7 +63,8 @@
 	</li>
 	<% end %>
 	<% end %>
-	 </ul>
+	</ul>
+	</center>
     </div>
   </div>
 </div>

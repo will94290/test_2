@@ -7,7 +7,7 @@ class UsersController < ApplicationController
         @users = User.includes(:profile).select { |user| user.profile != nil && (user.profile.first_name.upcase == params[:name].split.first.upcase || user.profile.last_name.upcase == params[:name].split.first.upcase) }
       end
     else
-      @users = User.includes(:profile)
+      @users = User.includes(:profile).page(params[:page]).per(2)
     end
     
     if params[:name] != nil && params[:name].length > 1
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         @users = User.includes(:profile).select { |user| user.profile != nil && ((user.profile.first_name.upcase == params[:name].split.first.upcase && user.profile.last_name.upcase == params[:name].split[1].upcase) || (user.profile.first_name.upcase == params[:name].split.last.upcase && user.profile.first_name.upcase == params[:name].split[1].upcase)) }
       end
     else
-      @users = @users
+      @users = @users.page(params[:page]).per(2)
     end
     
      if params[:job] != nil && (params[:job] == "Developer" || params[:job] == "Developpeur")
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
      elsif params[:job] != nil && (params[:job] == "Contractor" || params[:job] == "Entrepreneur")
        @users = @users.select { |user| user.profile != nil && (user.profile.job_title.upcase == "Contractor".upcase || user.profile.job_title.upcase == "Entrepreneur".upcase) }
      else
-       @users = @users
+       @users = @users.page(params[:page]).per(2)
      end
   end
   

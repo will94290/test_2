@@ -13,7 +13,7 @@
 	  <% end %>
 	  <li><select class="form-control" name="job">
 	      <option><%= $tab_word["#{$langue}"]["job"]["job"] %></option>
-	  <option><%= $tab_word["#{$langue}"]["job"]["dev"] %></option>
+	      <option><%= $tab_word["#{$langue}"]["job"]["dev"] %></option>
 	      <option><%= $tab_word["#{$langue}"]["job"]["entre"] %></option>
 	      <option><%= $tab_word["#{$langue}"]["job"]["inv"] %></option>
 	  </select></li>
@@ -64,7 +64,9 @@
 	<% end %>
 	<% end %>
 	</ul>
-	</center>
+      </center>>
     </div>
   </div>
 </div>
+
+<center><h4><%= paginate @users %></h4></center

@@ -30,6 +30,5 @@
 
 .recherche
 {
-    //background: url("verre-art-glass-color-std101-bleu-fonce-teinte-6.jpg") scroll;
-    background: #1A90AB;
+    background: url("verre-art-glass-color-std101-bleu-fonce-teinte-6.jpg") scroll;
 }

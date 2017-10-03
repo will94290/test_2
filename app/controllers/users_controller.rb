@@ -24,7 +24,7 @@ class UsersController < ApplicationController
        @users = @users.select { |user| user.profile != nil && (user.profile.job_title.upcase == "Contractor".upcase || user.profile.job_title.upcase == "Entrepreneur".upcase) }
      end
      
-     @users = Kaminari.paginate_array(@users).page(params[:page]).per(6)
+     @users = Kaminari.paginate_array(@users).page(params[:page]).per(10)
      
   end
   

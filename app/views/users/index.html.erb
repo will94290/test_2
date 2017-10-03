@@ -32,41 +32,44 @@
   <div class="row">
     <div>
       <center><ul class="list-unstyled">
-	<% @users.each do |user| %>
-	<% if user.profile != nil %>
-	<li>
-	  <div class="well row col-md-4 index-pers" style="margin-left: 120px;">
-	    <div class="col-md-4">
-	      <% if user.profile.avatar %>
-	      <%= link_to user do %>
-	      <% if user.profile.avatar.url != "/image/original/missing.png" %>
-		 <%= image_tag user.profile.avatar.url, class: "user-index-avatar"%>
-		 <% else %>
-		 <%= image_tag "facebook-geek-avatar.jpg", alt: "avatar", class:"user-index-avatar" %>
-		 <% end %>
-		 <% end %>
-		 <% end %>
+	  <% if @users.length == 0 %>
+	  <%= $tab_word["#{$langue}"]["index"]["nobody"]%>
+	  <% end %>
+	  <% @users.each do |user| %>
+	  <% if user.profile != nil %>
+	  <li>
+	    <div class="well row col-md-4 index-pers" style="margin-left: 120px;">
+	      <div class="col-md-4">
+		<% if user.profile.avatar %>
+		<%= link_to user do %>
+		<% if user.profile.avatar.url != "/image/original/missing.png" %>
+		<%= image_tag user.profile.avatar.url, class: "user-index-avatar"%>
+		<% else %>
+		<%= image_tag "facebook-geek-avatar.jpg", alt: "avatar", class:"user-index-avatar" %>
+		<% end %>
+		<% end %>
+		<% end %>
+	      </div>
+	      <div class="col-md-8">
+		<%= link_to user do %>
+		<h3><b><%= user.profile.first_name.capitalize %> <%= user.profile.last_name.capitalize %></b></h3>
+		<% end %>
+		<% if user.profile.job_title == "Developer" || user.profile.job_title == "Developpeur" %>
+		<p><%= $tab_word["#{$langue}"]["job"]["dev"] %></p>
+		<% elsif user.profile.job_title == "Investor" || user.profile.job_title == "Investisseur" %>
+		<p><%= $tab_word["#{$langue}"]["job"]["inv"] %></p>
+		<% elsif user.profile.job_title == "Contractor" || user.profile.job_title == "Entrepreneur" %>
+		<p><%= $tab_word["#{$langue}"]["job"]["entre"] %></p>
+		<% end %>
+	      </div>
 	    </div>
-	    <div class="col-md-8">
-	      <%= link_to user do %>
-	      <h3><b><%= user.profile.first_name.capitalize %> <%= user.profile.last_name.capitalize %></b></h3>
-	      <% end %>
-	      <% if user.profile.job_title == "Developer" || user.profile.job_title == "Developpeur" %>
-	      <p><%= $tab_word["#{$langue}"]["job"]["dev"] %></p>
-	      <% elsif user.profile.job_title == "Investor" || user.profile.job_title == "Investisseur" %>
-	      <p><%= $tab_word["#{$langue}"]["job"]["inv"] %></p>
-	      <% elsif user.profile.job_title == "Contractor" || user.profile.job_title == "Entrepreneur" %>
-	      <p><%= $tab_word["#{$langue}"]["job"]["entre"] %></p>
-	      <% end %>
-	    </div>
-	  </div>
-	</li>
-	<% end %>
-	<% end %>
+	  </li>
+	  <% end %>
+	  <% end %>
 	</ul>
-      </center>>
+      </center>
     </div>
   </div>
 </div>
 
-<center><h4><%= paginate @users %></h4></center
+<center><h4><%= paginate @users %></h4></center>

@@ -56,8 +56,10 @@
 		   <h3><b><%= user.profile.first_name.capitalize %> <%= user.profile.last_name.capitalize %></b></h3>
 		   <% elsif (user.profile.first_name.length + user.profile.last_name.length > 14) && (user.profile.first_name.length + user.profile.last_name.length < 33) %>
 		     <h4><b><%= user.profile.first_name.capitalize %> <%= user.profile.last_name.capitalize %></b></h4>
+		     <br />
 		     <% elsif user.profile.first_name.length + user.profile.last_name.length >= 33  %>
 		<h5><b><%= user.profile.first_name.capitalize %> <%= user.profile.last_name.capitalize %></b></h5>
+		<br />
 		<% end %>
 		<% end %>
 		<% if user.profile.job_title == "Developer" || user.profile.job_title == "Developpeur" %>
